@@ -11,12 +11,12 @@
 <body>
   <div>
     <div class="header" >
-      <h1>Pizza Place</h1>
+      <h1>Perfect Pizza</h1>
     </div>
 
     <div class="cartTotal " >
       <strong>Total price</strong>  
-      <span class="cartTotalPrice">0.00</span>
+      <span class="cartTotalPrice">{{result.cartTotal}}</span>
       <a href="#">
         <img src="shopping-cart.png" alt="">
       </a>
@@ -29,111 +29,129 @@
 
         <table>
           <tr>
+            <th>Pizza Size </th>
+             <th>Total</th>
+              <th>Quantity</th>
+          </tr>
+          <tr>
             <td><strong>Small pizzas total:</strong></td>
-            <td><span class="smallTotalPrice">{{totals.smallTotal}}</span></td>
+            <td><span class="smallTotalPrice">{{result.smallTotal}}</span></td>
+            <td><span class="smallTotalPrice">{{result.smallQuantity}}</span></td>
           </tr>
 
           <tr>
             <td><strong>Medium pizzas total:</strong></td>
-            <td><span class="mediumTotalPrice">{{totals.mediumTotal}}</span></td>
+            <td><span class="mediumTotalPrice">{{result.mediumTotal}}</span></td>
+            <td><span class="smallTotalPrice">{{result.mediumQuantity}}</span></td>
           </tr>
           <tr>
             <td><strong>Large pizza total:</strong></td>
-            <td><span class="largeTotalPrice">{{totals.largeTotal}}</span></td>
+            <td><span class="largeTotalPrice">{{result.largeTotal}}</span></td>
+            <td><span class="smallTotalPrice">{{result.largeQuantity}}</span></td>
           </tr>
           <tr>
-            <td><strong>Total price</strong></td>
-            <td><span class="totalPrice">{{totals.grandTotal}}</span></td>
+            <td><strong>Total price:</strong></td>
+            <td><span class="totalPrice">{{result.cartTotal}}</span></td>
           </tr>
         </table>
+        <button class="btn orderlargePizza" value="largeSubs" type="submit" name="button"   style="margin-left: auto"><a href="/viewcart">Order</a></button></td>
     </div>
 
-    <div class="pizzas">
-
-            <!------------Small Form Order Button------------->
-      <div class="pizza small">
-        <div class="info">
-          <img src="pizza.png"
-            alt="">
-          <h2>Small Pizza</h2>
-          <strong>35.00</strong>
-          <i>
-            <ul>
-              <li>small pizza with 3 toppings</li>
-              <li>1 meat topping.</li>
-              <li>3 or less other toppings.</li>
-            </ul>
-          </i>
+    <!------------Small Form Order Button------------->
+    <div class="pizzas" >
+      <form method="POST" action="/addToCart" class="pizza small">
+        <div class="pizza small">
+          <div class="info">
+            <img src="pizza.png"
+              alt="">
+            <h2>Small Pizza</h2>
+            <strong>R35.00</strong>
+            <i>
+              <ul>
+                <li>small pizza with 3 toppings</li>
+                <li>1 meat topping.</li>
+                <li>3 or less other toppings.</li>
+              </ul>
+            </i>
+          </div>
+          <div class="orderBox">
+            <button class="btn orderSmallPizza" value="small" type="submit" name="button" style="margin-left: auto">Order small pizza</button>
+          </div>
         </div>
-        <div class="orderBox">
-          <button class="btn orderSmallPizza" value="small" type="submit" name="button" style="margin-left: auto">Order small pizza</button>
-        </div>
-      </div>
+      </form>
       <!-------------------Form End--------------------->
 
       <!-------Meduim Form Order----------->
-      <div class="pizza medium">
-        <div class="info">
-          <img src="pizza.png"
-            alt="">
-          <h2>Medium Pizza</h2>
-          <strong>R65.00</strong>
+      <form method="POST" action="/addToCart" class="pizza medium">
+        <div class="pizza medium">
+          <div class="info">
+            <img src="pizza.png"
+              alt="">
+            <h2>Medium Pizza</h2>
+            <strong>R65.00</strong>
 
-          <div>
-            medium margeritha pizza with 3 toppings max.
-            2 or less meat topping.
-            3 or less other toppings.
+            <div>
+              medium margeritha pizza with 3 toppings max.
+              2 or less meat topping.
+              3 or less other toppings.
+            </div>
+          </div>
+
+          <div class="orderBox">
+            <button class="btn orderMediumPizza" value="medium" type="submit" name="button" style="margin-left: auto">Order medium pizza</button>
           </div>
         </div>
-
-        <div class="orderBox">
-          <button class="btn orderMediumPizza" value="meduim" type="submit" name="button" style="margin-left: auto">Order medium pizza</button>
-        </div>
-
-      </div>
+      </form>
       <!------------Meduim End-------------------------->
 
       <!------------Large Form Order Button------------->
-      <div class="pizza large">
-        <div class="info">
-          <img src="pizza.png"
-            alt="">
-          <h2>Large Pizza</h2>
-          <strong>85.00</strong>
-          <div>
-            large margeritha pizza with 3 toppings max.
-            3 meat toppings max.
-            3 or less other toppings.
+      <form method="POST" action="/addToCart" class="pizza large">
+        <div class="pizza large">
+          <div class="info">
+            <img src="pizza.png"
+              alt="">
+            <h2>Large Pizza</h2>
+            <strong>R85.00</strong>
+            <div>
+              large margeritha pizza with 3 toppings max.
+              3 meat toppings max.
+              3 or less other toppings.
+            </div>
+          </div>
+          <div class="orderBox" >
+            <button class="btn orderLargePizza" value="large"  type="submit" name="button" style="margin-left: auto">Order large pizza</button>
           </div>
         </div>
-        <div class="orderBox" >
-          <button class="btn orderLargePizza" value="large"  type="submit" name="button" style="margin-left: auto">Order large pizza</button>
-        </div>
-      </div>
+      </form>
       <!-------------Large Form Order Button------------>
 
     </div>
+    <div class="contain contact_us">
+
+        <h2>Contact Details</h2>
+
+        <p id="contact">
+            Contact us at:(021)-541-1000 <br>
+            info@perfectpizza.co.za <br>
+            Twitter/Facebook/Instagram <br>
+            @perfectpizza
+        </p>
+
+        <p id="location">
+            Perfect Pizza <br>
+            Dough Road <br>
+            Base Town
+        </p>
+    </div>
+
     <div class="footer">
-      <div class="contact">
-        
-      </div>
-      
+        Tebogo Seanego | 2021 | CodeX AWD Assesment
     </div>
   </div>
 </body>
-<script src="order-pizza.js"></script>
-<script src="pizza.js"></script>
+
 
 <hr>
-
-
-<div>
-
-  <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
-
-</div>
-
 
 </html>
 </html>

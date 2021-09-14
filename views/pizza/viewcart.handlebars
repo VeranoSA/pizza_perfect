@@ -1,0 +1,45 @@
+<form action="/pizza/modify" method="post">    
+    <div class="cart">
+        <h3>Shopping Cart</h3>
+        <img src="shopping-cart.png" alt="">
+        <table>
+            <tr>
+                <th>Pizza Size </th>
+                <th>Increase</th>
+                <th>Decrease</th>
+                <th>Total</th>
+
+            </tr>
+            <tr>
+                <td><strong>Small pizzas total:</strong></td>
+                <td> <button class="btn ordersmallPizza" value="smallAdd" type="submit" name="button"
+                        style="margin-left: auto">+</button></td>
+                <td> <button class="btn ordersmallPizza" value="smallSubs" type="submit" name="button"
+                        style="margin-left: auto">-</button></td>
+                <td> <span class="smallTotalPrice">{{result.smallTotal}}</span></td>
+            </tr>
+
+            <tr>
+                <td><strong>Medium pizzas total:</strong></td>
+                <td><button class="btn orderMediumPizza" value="mediumAdd" type="submit" name="button"
+                        style="margin-left: auto">+</button></td>
+                <td> <button class="btn orderMediumPizza" value="mediumSubs" type="submit" name="button"
+                        style="margin-left: auto">-</button></td>
+                <td> <span class="mediumTotalPrice">{{result.mediumTotal}}</span></td>
+            </tr>
+            <tr>
+                <td><strong>Large pizza total:</strong></td>
+                <td><button class="btn orderlargePizza" value="largeAdd" type="submit" name="button"
+                        style="margin-left: auto">+</button></td>
+                <td><button class="btn orderlargePizza" value="largeSubs" type="submit" name="button"
+                        style="margin-left: auto">-</button></td>
+                <td><span class="largeTotalPrice">{{result.largeTotal}}</span></td>
+            </tr>
+            <tr>
+                <td><strong>Total price:</strong></td>
+                <td><span class="totalPrice">{{result.cartTotal}}</span></td>
+            </tr>
+        </table>
+        <button class="btn orderlargePizza" value="largeSubs" type="submit" name="button"   style="margin-left: auto"><a href="/checkout">Checkout</a></button></td>
+    </div>
+</form>

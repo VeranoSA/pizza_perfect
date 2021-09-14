@@ -1,0 +1,17 @@
+<div class="cart" style="text-align: center;">
+    <h3>Orders</h3>
+    <br>
+    <div>
+        {{#if result.Id}}
+        <b>#{{result.Id}}</b>payment due<b> {{result.total}}</b> <span><button class="btn orderlargePizza" value="largeSubs"
+                type="submit" name="button" style="margin-left: auto"><a href="/pay">pay</a></button></span>
+        {{else}}
+        {{#if result.Id}}
+        <b>#{{result.Id}}</b>paid<b> {{result.total}}</b><span><button class="btn orderlargePizza" value="largeSubs"
+                type="submit" name="button" style="margin-left: auto"><a href="/paid">collect</a></button></span>
+        {{else}}
+        <b>#{{result.Id}}</b <b>collected<b> {{result.total}}</b> <span></span>
+        {{/if}}
+        {{/if}}
+    </div>
+</div>
